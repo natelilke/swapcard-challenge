@@ -2,17 +2,22 @@
 
 class IndexController extends Zend_Controller_Action
 {
-
-    public function init()
-    {
-        /* Initialize action controller here */
-    }
-
     public function indexAction()
     {
-        // action body
+
+        $this->view->pageTitle = 'Index';
     }
 
+    public function sendEmailAction()
+    {
+        if ($this->getRequest()->isPost()) {
+            $formData = $this->getRequest()->getPost();
 
+            $dbTableEmails = new Application_Model_DbTable_Emails();
+            $inserted = $dbTableEmails->insert($formData);
+
+            var_dump($inserted);
+            exit;
+        }
+    }
 }
-

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card shadow">
+        <div class="card-header p-3">
+            <div class="row">
+                <div class="col">
+                    <h4 class="mb-0 pt-1 align-middle">E-mails Sending Log</h4>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" id="btn-open-form" class="btn btn-sm btn-primary float-end">New Message</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-sm table-striped table-bordered mb-0">
+                <thead>
+                    <tr class="border-top-0">
+                        <th class="border-0">E-mail Address</th>
+                        <th class="border-0">Full Name</th>
+                        <th class="border-0" style="width: 140px;">Phone Number</th>
+                        <th class="border-0 text-center" style="width: 100px;">Message</th>
+                        <th class="border-0" style="width: 165px;">DateTime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->logs as $log) : ?>
+                        <tr>
+                            <td>marcaum54@gmail.com</td>
+                            <td>Marcos Fábio dos Santos Amaral Júnior</td>
+                            <td>(85) 98845-1234</td>
+                            <td class="text-center"><a href="#">Details</a></td>
+                            <td>2023-03-15 18:30:33</td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
