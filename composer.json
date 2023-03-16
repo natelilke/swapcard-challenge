@@ -1,5 +1,8 @@
 {
     "require": {
         "shardj/zf1-future": "^1.22"
+    },
+    "autoload": {
+        "classmap": ["application/validators/", "application/services/"]
     }
 }

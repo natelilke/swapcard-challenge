@@ -1,0 +1,12 @@
+<?php if ($this->errors) : ?>
+    <div class="container mt-3 mb-3">
+        <div class="alert alert-danger" role="alert">
+            <h5>Check the list of errors below:</h5>
+            <ul class="mb-0">
+                <?php foreach ($this->errors as $error) : ?>
+                    <li><?php echo $error; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+<?php endif; ?>

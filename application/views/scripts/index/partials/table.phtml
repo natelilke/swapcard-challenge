@@ -25,11 +25,11 @@
                 <tbody>
                     <?php foreach ($this->logs as $log) : ?>
                         <tr>
-                            <td>marcaum54@gmail.com</td>
-                            <td>Marcos Fábio dos Santos Amaral Júnior</td>
-                            <td>(85) 98845-1234</td>
+                            <td><?php echo $log->email; ?></td>
+                            <td><?php echo $log->name; ?></td>
+                            <td><?php echo $log->phone_number; ?></td>
                             <td class="text-center"><a href="#">Details</a></td>
-                            <td>2023-03-15 18:30:33</td>
+                            <td><?php echo $log->datetime; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

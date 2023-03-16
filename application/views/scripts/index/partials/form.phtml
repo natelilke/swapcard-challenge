@@ -15,30 +15,30 @@
         </div>
 
         <div class="card-body">
-            <form action="" method="post">
+            <form action="<?php echo $this->url(['controller' => 'index', 'action' => 'send-email']); ?>" method="post">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="email" class="form-label">To</label>
-                        <input type="email" class="form-control" name="email" id="email" required>
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" name="email" id="email" value="<?php echo $this->formData['email'] ?: ''; ?>" placeholder="Ex: example@address.com" required>
                     </div>
                     <div class="col">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name" id="name" required>
+                        <input type="text" class="form-control" name="name" id="name" value="<?php echo $this->formData['name'] ?: ''; ?>" required>
                     </div>
                     <div class="col">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" name="phone" id="phone" required>
+                        <label for="phone_number" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control phone-us-mask" name="phone_number" id="phone_number" value="<?php echo $this->formData['phone_number'] ?: ''; ?>" placeholder="Ex: (202) 555-0107" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="subject" class="form-label">Subject</label>
-                    <input type="text" class="form-control" name="subject" id="subject" required>
+                    <input type="text" class="form-control" name="subject" id="subject" value="<?php echo $this->formData['subject'] ?: ''; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="message" class="form-label">Message</label>
-                    <textarea name="message" id="message" class="form-control" cols="30" rows="10" required></textarea>
+                    <textarea name="message" id="message" class="form-control" cols="30" rows="10" required><?php echo $this->formData['message'] ?: ''; ?></textarea>
                 </div>
 
                 <div>

@@ -1,3 +1,5 @@
-<?php echo $this->partial('index/partials/form.phtml', ['isVisible' => $this->view->formIsVisible]); ?>
+<?php echo $this->partial('index/partials/form.phtml', ['isVisible' => $this->formIsVisible, 'formData' => $this->sendEmailFormData]); ?>
 
-<?php echo $this->partial('index/partials/table.phtml', ['logs' => range(1, 10)]); ?>
+<?php if (count($this->emails)) : ?>
+    <?php echo $this->partial('index/partials/table.phtml', ['logs' => $this->emails]); ?>
+<?php endif; ?>
