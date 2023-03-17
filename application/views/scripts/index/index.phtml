@@ -1,3 +1,5 @@
+<?php echo $this->partial('index/partials/modal.phtml'); ?>
+
 <?php echo $this->partial('index/partials/form.phtml', ['isVisible' => $this->formIsVisible, 'formData' => $this->sendEmailFormData]); ?>
 
 <?php if (count($this->emails)) : ?>

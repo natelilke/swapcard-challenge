@@ -40,6 +40,8 @@ class IndexController extends Zend_Controller_Action
             $isFormValid = $this->_sendFormValidator->isValid($formData);
             if ($isFormValid) {
 
+                $formData['message'] = nl2br($formData['message']);
+
                 $isEmailSent = $this->_sendEmailService->send($formData);
                 if ($isEmailSent) {
 
@@ -63,5 +65,20 @@ class IndexController extends Zend_Controller_Action
         }
 
         return $this->_helper->redirector('index');
+    }
+
+    public function showDetailsAction()
+    {
+        $this->_helper->layout()->disableLayout();
+
+        $id = (int)$this->getRequest()->getParam('id');
+
+        $email = $this->_dbTableEmails->fetchRow("id = {$id}");
+
+        if ($email) {
+            $this->view->log = $email;
+        } else {
+            throw new Exception('Not found Page', 404);
+        }
     }
 }
