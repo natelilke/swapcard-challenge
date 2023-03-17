@@ -29,7 +29,9 @@ class IndexController extends Zend_Controller_Action
         $this->view->formIsVisible = !count($this->view->emails) || $this->view->formErrors;
 
         //Turn session empty
-        \Zend_Session::destroy(true);
+        $this->_sendEmailFormSession->errors = [];
+        $this->_sendEmailFormSession->successMessage = null;
+        $this->_sendEmailFormSession->sendEmailFormData = [];
     }
 
     public function sendEmailAction()
