@@ -12,6 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Dumping database structure for swapcard_challenge
+CREATE DATABASE IF NOT EXISTS `swapcard_challenge` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+USE `swapcard_challenge`;
+
 -- Dumping structure for table swapcard_challenge.emails
 CREATE TABLE IF NOT EXISTS `emails` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -20,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `emails` (
   `phone_number` varchar(32) DEFAULT NULL,
   `subject` text DEFAULT NULL,
   `message` text DEFAULT NULL,
-  `datetime` text DEFAULT current_timestamp(),
+  `datetime` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
