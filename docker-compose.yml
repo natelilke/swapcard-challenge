@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: php_app
+        ports:
+            - "8000:8000"
+        volumes:
+            - .:/var/www/html:cached
+        working_dir: /var/www/html/public
+        command: php -S 0.0.0.0:8000
+        depends_on:
+            - db
+    db:
+        image: mysql:8.0
+        container_name: mysql_db
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: swapcard_challenge
+            MYSQL_USER: app_user
+            MYSQL_PASSWORD: app_password
+        ports:
+            - "3306:3306"
+        volumes:
+            - db_data:/var/lib/mysql
+            - ./data/db/schema.sqlite.sql:/docker-entrypoint-initdb.d/schema.sql
+
+
+volumes:
+    db_data:
