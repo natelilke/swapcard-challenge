@@ -1,5 +1,3 @@
 ## Instructions to run
 
-- The **data/db/schema.sqlite.sql** contains the structure necessary to create the DB
-- Check if your environment configuratios (host, user, dbname, password, port) match with **application/configs/application.ini**
-- Inside **public/** folder run: **php -S localhost:8000**
+- To start, run `docker-compose up` and it will automatically create the database with the initial schema.
